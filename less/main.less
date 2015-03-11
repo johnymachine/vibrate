@@ -1,0 +1,66 @@
+@button-dark: #333333;
+@button-light: #ecf0f1;
+@button-green: #27ae60;
+@button-red: #e74c3c;
+@button-blue: #2980b9;
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-family: Verdana;
+}
+
+.button-variant(@color, @text){
+    color: @text;
+    background-color: @color;
+    border-bottom: 3px solid darken(@color, 20%);
+    &:hover, &:focus, &.focus, &:active, &.active {
+        background-color: darken(@color, 20%);
+        color: @text;
+    }
+}
+
+.button{
+    height: 50px;
+    min-width: 100px;
+    margin: 10px 15px;
+    padding: 0 10px;
+    font-size: 20px;
+    border: none;
+    .button-variant(@button-dark, @button-light);
+}
+
+.button-green{
+    .button-variant(@button-green, @button-light);
+}
+
+.button-red{
+    .button-variant(@button-red, @button-light);
+}
+
+.button-blue{
+    .button-variant(@button-blue, @button-light);
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    background-color: #34495e;
+    text-align: center;
+    #vibrate-control {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 30px;
+    }
+    h1{
+        color: @button-light;
+        font-size: 40px;
+    }
+}
